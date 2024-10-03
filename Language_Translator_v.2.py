@@ -189,4 +189,10 @@ text_entry1.place(x=20, y=100)
 text_entry2 = Text(frame1, width=20, height=7, borderwidth=5, relief=RIDGE, font=('Arial', 15))
 text_entry2.place(x=325, y=100)
 
+btn = Button(frame1, command=translate, text="  Translate  ", relief=RAISED, borderwidth=2, font=('Arial', 10, 'bold'), bg='pink', fg='black', cursor="hand2")
+btn.place(x=200, y=300)
+
+btn2 = Button(frame1, command=clear, text="    Clear    ", relief=RAISED, borderwidth=2, font=('Arial', 10, 'bold'), bg='pink', fg='black', cursor="hand2")
+btn2.place(x=300, y=300)
+
 root.mainloop()
