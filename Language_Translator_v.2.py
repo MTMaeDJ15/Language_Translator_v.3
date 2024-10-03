@@ -1,6 +1,7 @@
 from tkinter import *
 import tkinter as tk
 from tkinter import ttk
+from tkinter import font
 from googletrans import Translator
 translator = Translator(service_urls= [
     'translate.google.com',
@@ -12,10 +13,10 @@ root = tk.Tk()
 root.title('Language Translator v.2')
 root.geometry('590x370')
 
-frame1 = Frame(root, width=590, height=370, relief=RIDGE, borderwidth=5, bg='pink')
+frame1 = Frame(root, width=590, height=370, relief=RIDGE, borderwidth=5, bg='#89cff0')
 frame1.place(x=0, y=0)
 
-Label(root, text="☆*: .｡.Language Translator ᓚᘏᗢ.｡.:*☆", font= ("Script 23 bold"), fg="black", bg='white').pack(pady=10)
+Label(root, text="ฅ⁠^⁠•⁠ﻌ⁠•⁠^⁠ฅ Language Translator~", font= ("Courier 20 bold"), fg="black", bg='white').pack(pady=10)
 
 def translate():
     lang_1 = text_entry1.get("1.0", "end-1c")
@@ -35,7 +36,7 @@ def clear():
 
 a = tk.StringVar()
 
-auto_select = ttk.Combobox(frame1, width=27, textvariable= a, state='randomly', font=('Arial', 10, 'bold'))
+auto_select = ttk.Combobox(frame1, width=27, textvariable= a, state='randomly', font=('Courier', 10, 'bold'))
 
 auto_select['values'] = (
                          'Auto Select',
@@ -45,7 +46,7 @@ auto_select.place(x=30, y=60)
 auto_select.current(0)
 
 l = tk.StringVar()
-choose_language = ttk.Combobox(frame1, width=27, textvariable=l, state='readonly', font=('Arial', 10, 'bold'))
+choose_language = ttk.Combobox(frame1, width=27, textvariable=l, state='readonly', font=('Courier', 10, 'bold'))
 choose_language['values'] = (
                         'Afrikaans',
                         'Albanian',
@@ -180,19 +181,19 @@ choose_language['values'] = (
                         'Yoruba',
                         'Zulu',
                             )
-choose_language.place(x=335, y=60)
+choose_language.place(x=315, y=60)
 choose_language.current(0)
 
-text_entry1 = Text(frame1,width=20, height=7, borderwidth=5, relief=RIDGE, font=('Arial', 15))
+text_entry1 = Text(frame1,width=20, height=7, borderwidth=5, relief=RIDGE, font=('Courier', 15))
 text_entry1.place(x=20, y=100)
 
-text_entry2 = Text(frame1, width=20, height=7, borderwidth=5, relief=RIDGE, font=('Arial', 15))
-text_entry2.place(x=325, y=100)
+text_entry2 = Text(frame1, width=20, height=7, borderwidth=5, relief=RIDGE, font=('Courier', 15))
+text_entry2.place(x=310, y=100)
 
-btn = Button(frame1, command=translate, text="  Translate  ", relief=RAISED, borderwidth=2, font=('Arial', 10, 'bold'), bg='pink', fg='black', cursor="hand2")
-btn.place(x=200, y=300)
+btn = Button(frame1, command=translate, text="  Translate  ", relief=RAISED, borderwidth=2, font=('Courier', 12, 'bold'), bg='#89cff0', fg='black', cursor="hand2")
+btn.place(x=140, y=300)
 
-btn2 = Button(frame1, command=clear, text="    Clear    ", relief=RAISED, borderwidth=2, font=('Arial', 10, 'bold'), bg='pink', fg='black', cursor="hand2")
+btn2 = Button(frame1, command=clear, text="   Clear   ", relief=RAISED, borderwidth=2, font=('Courier', 12, 'bold'), bg='#89cff0', fg='black', cursor="hand2")
 btn2.place(x=300, y=300)
 
 root.mainloop()
