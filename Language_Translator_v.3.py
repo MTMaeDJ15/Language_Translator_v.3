@@ -63,6 +63,10 @@ def translate():
         messagebox.showerror('Language Translator', 'Enter the Text to Translate!')
         return
     
+    if not lang_1.replace(" ", "").isalpha():
+        messagebox.showerror('Language Translator', f'Please Input Text Only!!!')
+        return
+    
     lang_codes = language_codes.get(cl, None)
     if not lang_codes:
         messagebox.showerror('Language Translator', f'Invalid Language Selected! {cl}')
@@ -78,6 +82,9 @@ def translate():
 def clear():
     text_entry1.delete(1.0, 'end')
     text_entry2.delete(1.0, 'end')
+    search_entry.delete(0, END)
+    selected_language.set('English')
+    search_entry.insert(0, "Search Language...")
 
 search_entry = Entry(frame1, font=('Courier 10 bold'))
 search_entry.place(x=310, y=50, width=250)
